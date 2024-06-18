@@ -3,6 +3,11 @@ extends layout
 block content
     h1 Add a new book: 
     form(method="POST" action="/new")
-        a(href='//google.com') Google
-        p this is a paragraph
-
+        ul
+            li 
+                label(for="title") Title:
+                input(type="text" name="title")
+            li 
+                label(for="author") Author:
+                input(type="text" name="author")
+        button(type="submit") Submit

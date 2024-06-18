@@ -41,4 +41,8 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 // To run app:
+// npm run devstart
+
+// Or:
 // DEBUG=mini-message-board:* npm start
+

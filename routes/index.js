@@ -24,6 +24,7 @@ router.get("/new", function (req, res, next) {
 });
 
 
-
+// After installing nodemon and setting a script we can now set watch mode with:
+// npm run devstart
 
 module.exports = router;
