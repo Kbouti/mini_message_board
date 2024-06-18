@@ -2,12 +2,13 @@ extends layout
 
 block content
     h1 Add a new book: 
+    a(href="./") Home
     form(method="POST" action="/new")
         ul
             li 
-                label(for="title") Title:
-                input(type="text" name="title")
+                label(for="text") Text:
+                input(type="text" name="text")
             li 
-                label(for="author") Author:
-                input(type="text" name="author")
+                label(for="user") User:
+                input(type="text" name="user")
         button(type="submit") Submit

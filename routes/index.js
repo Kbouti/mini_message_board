@@ -26,8 +26,9 @@ router.get("/new", function (req, res, next) {
 
 // Post form on submit:
 router.post("/new", function(req, res, next){
-  console.log(req.body.title)
-  // WHOOOOOHOOOO We logged the value of our "title" input on the form. That's gotta be good for something, right?
+  console.log(req.body.text)
+messages.push({text: req.body.text, user: req.body.user, added: new Date()});
+res.redirect('/')
 });
 
 
