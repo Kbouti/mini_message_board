@@ -19,12 +19,17 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Mini Message Board", messages: messages });
 });
 
+// Get form page:
 router.get("/new", function (req, res, next) {
   res.render("form", { title: "Mini Message Board", messages: messages });
 });
 
+// Post form on submit:
+router.post("/new", function(req, res, next){
+  console.log(req.body.title)
+  // WHOOOOOHOOOO We logged the value of our "title" input on the form. That's gotta be good for something, right?
+});
 
-// After installing nodemon and setting a script we can now set watch mode with:
-// npm run devstart
+
 
 module.exports = router;
