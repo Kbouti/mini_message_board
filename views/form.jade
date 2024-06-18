@@ -1,4 +1,8 @@
 extends layout 
 
 block content
-    h1 Welcome to the form
+    h1 Add a new book: 
+    form(method="POST" action="/new")
+        a(href='//google.com') Google
+        p this is a paragraph
+
