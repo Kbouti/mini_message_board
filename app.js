@@ -46,3 +46,7 @@ module.exports = app;
 // Or:
 // DEBUG=mini-message-board:* npm start
 
+// ************************************************************************************************
+// App has been deployed on the PaaS Adaptable. Domain name: 
+// https://messageboard-1.adaptable.app/
+// ************************************************************************************************
