@@ -50,3 +50,8 @@ module.exports = app;
 // App has been deployed on the PaaS Adaptable. Domain name: 
 // https://messageboard-1.adaptable.app/
 // ************************************************************************************************
+
+// Next assignment: Add data persistence with a database: 
+// https://www.theodinproject.com/lessons/nodejs-installing-postgresql
+
+// ************************************************************************************************
