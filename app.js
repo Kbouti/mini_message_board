@@ -54,4 +54,12 @@ module.exports = app;
 // Next assignment: Add data persistence with a database: 
 // https://www.theodinproject.com/lessons/nodejs-installing-postgresql
 
+// Creating a database "message_board"
+// Next we'll create table within message_board: "messages"
+// We'll need to define parameters for messages. Message needs text and a user, just two strings
+
+// Then we need to access our db, populate our db, and modify our db when adding messages
+
+
+
 // ************************************************************************************************
