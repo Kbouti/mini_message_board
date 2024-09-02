@@ -56,10 +56,22 @@ module.exports = app;
 
 // Creating a database "message_board"
 // Next we'll create table within message_board: "messages"
-// We'll need to define parameters for messages. Message needs text and a user, just two strings
+// We'll need to define parameters for messages. Message needs text and a user and a time stamp
 
 // Then we need to access our db, populate our db, and modify our db when adding messages
 
+// create table testLogs ( id integer primary key generated always as Identity, log varchar(255) );
+
+// This doesn't work for some reason.... Can't add multiple columns when initiating?
+// create table messages ( id integer primary key generated always as Identity, Text varchar(255), User varchar(255), Added date  );
+
+
+// Instead, initiate the table with just text and id, then we'll alter the table and add rows:
+
+// ALTER TABLE table_name
+// ADD column_name datatype; 
+
+// Tried that and it still isn't really liking my input...
 
 
 // ************************************************************************************************
