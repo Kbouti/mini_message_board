@@ -74,4 +74,34 @@ module.exports = app;
 // Tried that and it still isn't really liking my input...
 
 
+// **************************************************************************************************************
+// This should work....
+// It's giving me a syntax error at or near "User". What the hell????
+
+// CREATE TABLE Messages (
+//   ID integer generated always as identity,
+//   Text varchar(255),
+//   User varchar(20),
+//   Added datetime 
+// );
+
+
+// CREATE TABLE Messages (
+//   ID int,
+//   text varchar(255),
+//   user varchar(20),
+//   Added datetime 
+// );
+
+
+CREATE TABLE testTable (
+  ID int,
+  text varchar(255)
+);
+// This worked^^^^^
+
+
+
+
+
 // ************************************************************************************************
