@@ -93,15 +93,21 @@ module.exports = app;
 //   Added datetime 
 // );
 
+// ************************************************************************************************
 
-CREATE TABLE testTable (
-  ID int,
-  text varchar(255)
-);
+// CREATE TABLE testTable (
+//   ID int,
+//   text varchar(255)
+// );
+// insert into testTable (text) values ('poop'),('shit'),('crap');
+
 // This worked^^^^^
-
-
+// We've created the table and added three text rows. The do not have Id's tho because we didn't explicitly provide that
 
 
 
 // ************************************************************************************************
+
+// OK SOO 
+// We ought to be able to create the table we need, if only just with one column, then add the columns we need. Perhaps in doing so we'll figure out what it was about our input that sql didn't like. 
+// Currently testTable still exists, we can drop if needed or keep using it to experiment
