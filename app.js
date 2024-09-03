@@ -1,41 +1,41 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "jade");
 
-app.use(logger('dev'));
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render("error");
 });
 
 module.exports = app;
@@ -47,11 +47,11 @@ module.exports = app;
 // DEBUG=mini-message-board:* npm start
 
 // ************************************************************************************************
-// App has been deployed on the PaaS Adaptable. Domain name: 
+// App has been deployed on the PaaS Adaptable. Domain name:
 // https://messageboard-1.adaptable.app/
 // ************************************************************************************************
 
-// Next assignment: Add data persistence with a database: 
+// Next assignment: Add data persistence with a database:
 // https://www.theodinproject.com/lessons/nodejs-installing-postgresql
 
 // Creating a database "message_board"
@@ -65,14 +65,12 @@ module.exports = app;
 // This doesn't work for some reason.... Can't add multiple columns when initiating?
 // create table messages ( id integer primary key generated always as Identity, Text varchar(255), User varchar(255), Added date  );
 
-
 // Instead, initiate the table with just text and id, then we'll alter the table and add rows:
 
 // ALTER TABLE table_name
-// ADD column_name datatype; 
+// ADD column_name datatype;
 
 // Tried that and it still isn't really liking my input...
-
 
 // **************************************************************************************************************
 // This should work....
@@ -82,15 +80,14 @@ module.exports = app;
 //   ID integer generated always as identity,
 //   Text varchar(255),
 //   User varchar(20),
-//   Added datetime 
+//   Added datetime
 // );
-
 
 // CREATE TABLE Messages (
 //   ID int,
 //   text varchar(255),
 //   user varchar(20),
-//   Added datetime 
+//   Added datetime
 // );
 
 // ************************************************************************************************
@@ -104,10 +101,25 @@ module.exports = app;
 // This worked^^^^^
 // We've created the table and added three text rows. The do not have Id's tho because we didn't explicitly provide that
 
+// ************************************************************************************************
+// CREATE TABLE Messages (
+//   ID integer generated always as identity
+// );
 
+// ALTER TABLE Messages
+// ADD Message VARCHAR(255);
+
+// ALTER TABLE Messages
+// ADD Author VARCHAR(20);
+
+// ALTER TABLE Messages
+// ADD Added date;
 
 // ************************************************************************************************
 
-// OK SOO 
-// We ought to be able to create the table we need, if only just with one column, then add the columns we need. Perhaps in doing so we'll figure out what it was about our input that sql didn't like. 
-// Currently testTable still exists, we can drop if needed or keep using it to experiment
+// BOOOOM We've created the table and columns
+
+// insert into messages (message, author, added) values ('Hello World!', 'Kevin', '9/3/2024');
+
+// and BOOOM we've inserted into it!
+// ************************************************************************************************
