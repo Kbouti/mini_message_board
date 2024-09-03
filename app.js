@@ -113,13 +113,21 @@ module.exports = app;
 // ADD Author VARCHAR(20);
 
 // ALTER TABLE Messages
-// ADD Added date;
+// ADD Date date;
 
+// ALTER TABLE Messages
+// ADD Time time;
+
+
+// So here we'd like to change datatype from data to datetime. This should work but it doesn't like DATETIME
+// ALTER TABLE messages ALTER COLUMN added DATETIME;
+// ALTER TABLE messages ALTER COLUMN added TIMESTAMP;
 // ************************************************************************************************
 
 // BOOOOM We've created the table and columns
 
-// insert into messages (message, author, added) values ('Hello World!', 'Kevin', '9/3/2024');
+// insert into messages (message, author, added, timestamp) values ('Hello World!', 'Brendan', '9/1/1995', current_timestamp);
+// insert into messages (message, author, added, timestamp) values ('Hello World!', 'Kevin', current_timestamp, current_timestamp);
 
-// and BOOOM we've inserted into it!
+// and BOOOM we've inserted into it! With date and timestamp.
 // ************************************************************************************************
